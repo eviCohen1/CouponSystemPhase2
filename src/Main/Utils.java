@@ -95,7 +95,7 @@ public class Utils {
 	 */
 	public static String getPathLogsFile() {
 
-		return "C:\\Users\\evic\\OneDrive\\Java\\Project\\Logs\\logs.txt";
+		return "C:\\Users\\evic\\OneDrive\\Study Dev\\Java\\Project\\Logs\\logs.txt";
 	}
 	
 	/** This method retrun the path of the Logs Folder 
@@ -103,7 +103,7 @@ public class Utils {
 	 */
 	public static String getPathDirectoryLogsFile() { 
 		
-		return "C:\\Users\\evic\\OneDrive\\Java\\Project\\Logs\\" ; 
+		return "C:\\Users\\evic\\OneDrive\\Study Dev\\Java\\Project\\Logs\\" ; 
 		
 	}
 
@@ -125,11 +125,8 @@ public class Utils {
 			inputStream.close();
 		} catch (Exception e) {
 			
-			System.out.println(e.getMessage());
-			
-//			System.out.println("The file not exist !!!");
+		System.out.println("can not read the file");
 		}
-
 		return data;
 	}
 
@@ -142,11 +139,10 @@ public class Utils {
 		try {
 
 			createDirctories(false);
-			if (!fileExist() || readLogFile() == "") {
+			if (!Utils.fileExist() || Utils.readLogFile() == "") {
 				OutputStream outputStream = new FileOutputStream(getPathLogsFile());
 				outputStream.write(log.getBytes());
 			} else {
-
 				File file = new File(getPathLogsFile());
 				BufferedWriter input = new BufferedWriter(new FileWriter(file, true));
 				input.newLine();

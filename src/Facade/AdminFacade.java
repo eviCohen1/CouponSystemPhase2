@@ -73,6 +73,7 @@ public class AdminFacade implements CouponClientFacade {
 			company2 = (Company) itr.next();
 			if (company2 instanceof Company && company2.getCompName().equals(company.getCompName())) { 	
 				Logger.log(Log.info("Company " + company.getCompName() + " Already Exist"));
+//				System.out.println("Company " + company.getCompName() + " Already Exist");
 				
 				return;
 			}
@@ -80,6 +81,7 @@ public class AdminFacade implements CouponClientFacade {
 		}
 		compDAO.createCompany(company);
 		Logger.log(Log.info("Company " + company.getCompName() + " Created"));
+//		System.out.println("Company " + company.getCompName() + " Created");
 	}
 
 	/* Remove Company
